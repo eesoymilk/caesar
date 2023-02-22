@@ -49,7 +49,7 @@ def all_result(n: int = 3) -> None:
             print()
 
         
-def generate_problems(n: int = 3, is_advanced:bool = False):
+def generate_problems(n: int = 3) -> None:
     print(f'n = {n}')
     
     for level, pset in enumerate(generate_codes(n)[1:], 1):
@@ -58,8 +58,9 @@ def generate_problems(n: int = 3, is_advanced:bool = False):
             print(f'Q{i}: {problem.code}')
             print(f'A{i}: {problem.original}\n')
         print()
-        
-def generate_chanllenges(n: int = 3):
+
+
+def generate_chanllenges(n: int = 3) -> None:
     print(f'n_i = {n} + i, starting at i = 0')
     
     for level, pset in enumerate(generate_codes(n)[1:], 1):
@@ -67,20 +68,6 @@ def generate_chanllenges(n: int = 3):
         for i, problem in enumerate(sample(pset, 3), 1):
             print(f'Q{i}: {problem.ladder_code}')
             print(f'A{i}: {problem.original}\n')
-        print()
-
-def challenge(n: int = 6):
-    print(f'n = {n}')
-    challenges = []
-    for word in words:
-        if ' ' in word or len(word) > 6:
-    
-            challenges.append(Caesar(word, n))
-        
-    for i, e in enumerate(sample(challenges, 3), 1):
-        print(f'    {i}: ', end='')
-        print(f'{e.coolcode} - {e.original}')
-    else:
         print()
 
 
