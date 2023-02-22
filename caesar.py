@@ -34,7 +34,7 @@ def generate_codes(n: int = 3) -> list[list[Caesar]]:
         else:
             level = 2
 
-        all_encryptions[level].append(Caesar(word))
+        all_encryptions[level].append(Caesar(word, n))
 
     return all_encryptions
 
